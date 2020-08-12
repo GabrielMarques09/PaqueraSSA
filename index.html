@@ -1,0 +1,119 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>PaqueraSSA</title>
+	<link rel="stylesheet" href="css/css.css" />
+	<link rel="stylesheet" href="css/lightbox.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+
+<body>
+	<main class="centralizar">
+		<div id="topo" class="top">
+			<div id="logo-topo" class="quebra-esq"><img src="images/logo.jpg" /></div>
+			<div id="busca" class="quebra-esq">
+				<div id="busca-left" class="quebra-esq"><img src="images/bucar_left.jpg" /></div>
+				<div id="busca-campo" class="quebra-esq"><input type="text" placeholder="Digite sua busca..." /></div>
+				<div id="busca-left" class="quebra-esq"><img src="images/buscar_right.jpg" /></div>
+			</div>
+			<div class="limpar-quebra"></div>
+			<ul id="menu">
+				<li class="quebra-esq"><a href="#">home</a></li>
+				<li class="quebra-esq"><a href="#">supermatch</a></li>
+				<li class="quebra-esq"><a href="#">comunidades</a></li>
+				<li class="quebra-esq"><a href="#">eventos</a></li>
+				<li class="quebra-esq"><a href="#">humor</a></li>
+				<li class="quebra-esq"><a href="#">sobre nós</a></li>
+				<li class="quebra-esq"><a href="#">contato</a></li>
+				<li class="limpar-quebra"></li>
+			</ul>
+		</div>
+		
+		<div id="banner">
+			<img src="images/banner.jpg" class="banner-item" />
+			<img src="images/banner-02.jpg" class="banner-item" />
+			<img src="images/banner-03.jpg" class="banner-item" />
+			<img src="images/banner-04.jpg" class="banner-item" />
+		</div>
+		<div id="banner-btns" class="quebra-dir">
+			<div class="banner-btn quebra-esq"></div>
+			<div class="banner-btn quebra-esq"></div>
+			<div class="banner-btn quebra-esq"></div>
+			<div class="banner-btn quebra-esq"></div>
+		</div>
+		<div class="limpar-quebra"></div>
+		
+		<div class="divisoria"></div>
+		<h1>Seja bem-vindo ao nosso site!</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel dolor sodales, dapibus massa non, molestie magna. Donec commodo neque nibh, rhoncus imperdiet enim interdum sed. Suspendisse 
+dapibus purus uscipit luctus rutrum. Vestibulum ipsum mi, laoreet lobortis egestas in, laoreet eget purus. 
+Nunc maximus ipsum in nibh dapibus ultricies. Donec lorem urna, pretium vitae bibendum congue, 
+consequat nec metus. Maecenas euismod pretium molestie. Maecenas aliquam risus ligula, quis congue 
+lacus tincidunt at. Pellentesque consectetur finibus risus a sollicitudin. Fusce cursus blandit ipsum ac.</p>
+		<div class="divisoria"></div>
+		<h2>Últimos eventos...</h2>
+		<div class="quebra-esq setas-galeria"><img src="images/seta-left.jpg" /></div>
+		<a href='images/img-01.jpg' data-lightbox="example-set" width="285" class='quebra-esq galeria-item'><img src="images/img-01.jpg" width="285" /></a>
+		<a href='images/img-02.jpg' data-lightbox="example-set" width="285" class='quebra-esq galeria-item'><img src="images/img-02.jpg" width="285" /></a>
+		<a href='images/img-03.jpg' data-lightbox="example-set" width="285" class='quebra-esq galeria-item'><img src="images/img-03.jpg" width="285" /></a>
+		<div class="quebra-esq setas-galeria"><img src="images/seta-right.jpg" /></div>
+		<div class="limpar-quebra"></div>
+	</main>
+	<footer id="rodape">
+		<div class="centralizar">
+			<ul id="menu-rodape" class="quebra-esq">
+				<li class="quebra-esq"><a href="#">home</a></li>
+				<li class="quebra-esq"><a href="#">supermatch</a></li>
+				<li class="quebra-esq"><a href="#">comunidades</a></li>
+				<li class="quebra-esq"><a href="#">eventos</a></li>
+				<li class="quebra-esq"><a href="#">humor</a></li>
+				<li class="quebra-esq"><a href="#">sobre nós</a></li>
+				<li class="quebra-esq"><a href="#">contato</a></li>
+				<li class="limpar-quebra"></li>
+			</ul>
+			<div class="quebra-esq" id="rodape-logo">
+				<img src="images/logo-rodape.jpg" /><br /><br />
+				<img src="images/facebook-rodape.jpg" />
+				<img src="images/instagram-rodape.jpg" />
+				<img src="images/twitter-rodape.jpg" />
+			</div>
+			<div class="limpar-quebra"></div>
+		</div>
+	</footer>
+	
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/lightbox-plus-jquery.js"></script>
+	<script>
+		$(function() {
+			var index = 0;
+			var tempo = 5000;
+			var tamanho = $(".banner-item").length;
+			var timeoutBanner = window.setTimeout(mostrarBanner, 0);
+			
+			$(".banner-btn:lt("+tamanho+")").show();
+			
+			function mostrarBanner() {
+				clearTimeout(timeoutBanner);
+				$(".banner-item").hide();
+				$(".banner-item").eq(index).show();
+				$(".banner-btn").removeClass("banner-btn-selected");
+				$(".banner-btn").eq(index).addClass("banner-btn-selected");
+				index++;
+				
+				if (index > (tamanho - 1)) {
+					index = 0;
+				}
+				
+				timeoutBanner = window.setTimeout(mostrarBanner, tempo);
+			}
+			
+			$(".banner-btn").click(function() {
+				clearTimeout(timeoutBanner);
+				index = $(this).index();
+				timeoutBanner = window.setTimeout(mostrarBanner, 0);					
+			});
+		});
+	</script>
+</body>
+
+</html>

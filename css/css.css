@@ -1,0 +1,41 @@
+body {background: url("../images/bg_topo.jpg") repeat-x top; font-family: verdana; margin:0; padding:0;}
+*:focus {
+    outline: none;
+}
+.quebra-esq {float: left;}
+.quebra-dir {float: right;}
+.limpar-quebra {clear: both;}
+.centralizar {width: 1062px; margin: 0 auto;}
+#logo-topo {padding-top: 4px;}
+#topo {padding-top: 47px;}
+#busca {margin-left: 250px;}
+#busca-campo {width: 480px; height: 49px; background: white;}
+#busca-campo input {width: 480px; height: 49px; border: none; font-size: 16px; color: #dbdbdb;}
+
+#menu {margin:47px 0 0 37px; padding: 0; list-style: none;}
+#menu li {font-size: 16px; text-transform: uppercase;}
+#menu li a {color: black; text-decoration: none; display: block; padding: 20px 25px;}
+#menu li a:hover {color: white; background: black;}
+
+#banner {margin-top: 33px;}
+#banner-btns {margin-top: 10px;}
+.banner-item {display: none;}
+.banner-btn {width: 61px; height: 10px; background: black; margin-left: 10px; cursor: pointer; display: none;}
+.banner-btn:hover {background: #bb2c2c;}
+.banner-btn-selected {background: #bb2c2c !important;}
+.divisoria {height: 10px; background: #d4d4d4; margin: 30px 0; width: 100%;}
+.setas-galeria {margin-top: 128px;}
+.galeria-item {padding: 0 24px;}
+
+#rodape {background: black; padding:40px 0; margin-top: 20px;}
+#menu-rodape { padding: 0; list-style: none;}
+#menu-rodape li {font-size: 16px; text-transform: uppercase;}
+#menu-rodape li a {color: white; text-decoration: none; display: block; padding: 20px 10px;}
+#menu-rodape li a:hover {color: red;}
+#rodape-logo {text-align: center; width: 320px;}
+
+.fr-content {top: 10px !important;}
+
+
+
+	
